@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var box = "box";
     var Dice = /** @class */ (function () {
         function Dice() {
+            var _this = this;
             this.div = document.createElement("div");
-            this.value = document.createTextNode(Math.floor((Math.random() * 6) + 1));
+            this.value = document.createTextNode((Math.floor((Math.random() * 6) + 1)).toString());
             this.div.appendChild(this.value);
             this.div.className = "square";
             this.div.id = box;
             document.body.appendChild(this.div);
             this.div.addEventListener("click", function () {
-                this.div.remove();
-            }.bind(this));
+                _this.div.remove();
+            });
         }
         ;
         return Dice;
