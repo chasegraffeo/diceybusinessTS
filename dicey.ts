@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let btn2 = document.getElementById(`generate`);
-    let sum = document.getElementById(`sum`);
-    let roll = document.getElementById(`roll`);
+    let btn2 = document.getElementById(`generate`)! as HTMLElement;
+    let sum = document.getElementById(`sum`)! as HTMLElement;
+    let roll = document.getElementById(`roll`)! as HTMLElement;
     let box = `box`;
     
 
     class Dice {
+        div: HTMLDivElement;
+        value: Text ;
         constructor() {
-            this.div = document.createElement(`div`)! HTML;
+            this.div = document.createElement(`div`);
             this.value = document.createTextNode(Math.floor((Math.random() * 6) + 1));
             this.div.appendChild(this.value);
             this.div.className = `square`
